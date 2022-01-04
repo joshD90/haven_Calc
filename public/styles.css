@@ -1,0 +1,18 @@
+body {
+  background-color: blue;
+}
+
+h1 {
+  text-align: center;
+}
+
+.formDiv {
+  background-color: green;
+  height: 400px;
+  margin-top: 50px;
+  margin-left: 25%;
+  padding-top: 40px;
+  position: relative;
+  text-align: center;
+  width: 50%;
+}
