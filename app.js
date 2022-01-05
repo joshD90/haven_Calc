@@ -3,26 +3,32 @@ const bodyParser = require('body-parser');
 
 const app = express();
 
+app.set('view engine', 'ejs');
+
 app.use(bodyParser.urlencoded({
   extended: true
 }));
 
 app.use(express.static('public'));
 
+
 app.get('/', (req, res) => {
-  res.sendFile(__dirname + '/index.html');
+  res.render("index", {
+    myAnswer: ""
+  })
 });
 
-app.post('/result', (req, res) => {
+app.post('/', (req, res) => {
   const firstNum = parseFloat(req.body.number1);
   const secondNum = parseFloat(req.body.number2);
   const operate = req.body.operator;
 
-  myResult = JSON.stringify(doCalc(firstNum, secondNum, operate));
+  let myResult = JSON.stringify(doCalc(firstNum, secondNum, operate));
+  let roundedResult = +parseFloat(myResult).toFixed(6);
 
-
-  res.write(myResult);
-  res.end();
+  res.render('index', {
+    myAnswer: roundedResult
+  });
 });
 
 app.listen(3000, () => {

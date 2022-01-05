@@ -1,5 +1,5 @@
 body {
-  background-color: blue;
+  background-color: #93FFD8;
 }
 
 h1 {
@@ -7,7 +7,7 @@ h1 {
 }
 
 .formDiv {
-  background-color: green;
+  background-color: #548CFF;
   height: 400px;
   margin-top: 50px;
   margin-left: 25%;
@@ -15,4 +15,8 @@ h1 {
   position: relative;
   text-align: center;
   width: 50%;
+}
+
+.answer {
+  font-size: 5rem;
 }
